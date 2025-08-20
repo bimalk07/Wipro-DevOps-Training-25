@@ -1,11 +1,10 @@
 # Create aws vpc
 
 resource "aws_vpc" "main" {
-  cidr_block       = "10.0.0.0/16"
-  instance_tenancy = "default"
-
+  cidr_block       = var.cidr_block_vpc
+  instance_tenancy = var.instance_tenancy
   tags = {
-    Name = "murali-vpc"
+    Name = var.Name_vpc
   }
 }
 
@@ -13,11 +12,10 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
-  availability_zone = "us-east-1a"   # replace with ur availability zone
-
+  cidr_block = var.cidr_block_subnet
+  availability_zone = var.availability_zone_pub_subnet
   tags = {
-    Name = "murali-public-subnet"
+    Name = var.Name_subnet
   }
 }
 
