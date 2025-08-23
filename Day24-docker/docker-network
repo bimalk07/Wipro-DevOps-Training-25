@@ -1,0 +1,49 @@
+Docker Networking
+================
+
+	Ø To make communication between the containers 
+	Ø By default docker will create the networks
+
+Why Docker
+==========
+
+	1. Isolation & security:- 
+	2. Service discovery:- use contaienr names or svc names
+	3. Port management:- expose only wt needa to be publicly or pvtly
+	4. Mulit-host networking:- swarm outdated of feature 
+	5. Performance / compatibility:- each network has one driver 
+
+Types of networks 
+===============
+
+	1. Bridge network:- contaienrs can communicate with each other using names inside the same bridge network, outside world can reach them only via port mapping
+
+	2. Host network:- contaienr shares the same network namespace as the host
+
+	Ø There is no network isolation 
+Why:- useful for high performance apps where port mapping is overhead
+	Ø But containers cannot be isolated by ip, they just use host's ip
+
+	3. None:- container has no network interface 
+
+	Ø Completely isolated (no internet, no other container's communication)
+	Ø Useful for running secure workloads or testing
+
+ 220  docker network ls
+  221  docker network create my-bridge-network
+  222  docker network ls
+  223  docker run -dit --name c-1 --network  my-bridge-network alpine sh
+  224  docker ps -a
+  225  docker run -dit --name c-2 --network my-bridge-network nginx
+  226  docker ps
+  227  docker exec -it c-1 bash
+  228  docker exec -it c-1 sh
+  229  docker network ls
+  230  docker run -dit --name c-3 --network host nginx
+  231  docker ps
+  232  docker inspect c-3
+  233  curl http://localhost
+  234  docker network ls
+  235  docker run -dit --name c-4 --network none alpine sh
+  236  docker ps
+  237  docker exec -it c-4 sh
