@@ -1,0 +1,62 @@
+  237  kubectl get deployments -A
+  238  kubectl top nodes
+  239  kubectl get deployments -A
+  240  kubectl top nodes
+  241  kubectl get deployments -A
+  242  kubectl get all -n murali-ns
+  243  ls
+  244  cd ..
+  245  ls
+  246  kubectl get pods -A
+  247  kubectl get rs -A
+  248  kubectl get deployments -A
+  249  ls
+  250  kubectl get nodes
+  251  kubectl top nodes
+  252  kubectl top pods
+  253  kubectl top pods -A
+  254  kubectl top pods -n murali-ns
+  255  kubectl get all -n murali-ns
+  256  kubectl get pods -o wide -n murali-ns
+  257  kubectl delete pods --all -n murali-ns
+  258  kubectl get pods -o wide -n murali-ns
+  259  kubectl rollout restart deployment ipl-deployment -n murali-ns
+  260  kubectl get all -n murali-ns
+  261  kubectl delete rs ipl-deployment-58c95864d5 -n murali-ns
+  262  kubectl delete rs ipl-deployment-6db95df674 -n murali-ns
+  263  kubectl delete rs ipl-deployment-9756b958b -n murali-ns
+  264  kubectl get all -n murali-ns
+  265  kubectl describe pod ipl-deployment-9756b958b-spmnx -n murali-ns
+  266  ls
+  267  kubectl get deployment -A
+  268  kubectl delete deployment ipl-deployment -n abdullah
+  269  kubectl get all -n murali-ns
+  270  kubectl get deployment -A
+  271  kubectl delete deployment ipl-deployment -n akash
+  272  kubectl get all -n murali-ns
+  273  kubectl get pods -o wide -n murali-ns
+  274  kubectl delete pods --all -n murali-ns
+  275  kubectl get pods -o wide -n murali-ns
+  276  kubectl top nodes
+  277  kubectl get pods -o wide -n murali-ns
+  278  kubectl delete pods --all -n murali-ns
+  279  kubectl get pods -o wide -n murali-ns
+  280  kubectl get deployment -A
+  281  kubectl delete deployment ipl-deployment -n akshat
+  282  kubectl get pods -o wide -n murali-ns
+  283  kubectl get deployment -A
+  284  kubectl delete deployment ipl-deployment -n arjukumar
+  285  kubectl get pods -o wide -n murali-ns
+  286  kubectl get nodes
+  287  ls
+  288  cd murali/
+  289  ls
+  290  cat deployment.yaml
+  291  kubectl get all -n murali-ns
+  292  vi service.yaml
+  293  ls
+  294  kubectl get svc
+  295  ls
+  296  kubectl apply -f service.yaml
+  297  kubectl get svc -n murali-ns
+  298  kubectl describe svc ipl-service -n murali-ns
