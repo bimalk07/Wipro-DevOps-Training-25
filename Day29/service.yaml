@@ -10,3 +10,19 @@ spec:
       port: 80 #svc port number and its our wish
       targetPort: 3000 # container port number and we shouldn't change it
   type: ClusterIP
+
+  # svc type nodeport
+
+  apiVersion: v1
+kind: Service
+metadata:
+  name: ipl-service
+spec:
+  selector:
+    app: ipl
+  ports:
+    - protocol: TCP
+      port: 80 #svc port number and its our wish
+      targetPort: 3000 # container port number and we shouldn't change it
+      nodePort: 30080
+  type: NodePort
