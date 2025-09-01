@@ -1,0 +1,33 @@
+K8s 
+
+30 August 2025
+09:25
+
+K8s cluster prerequisites
+====================
+
+	1. One vm
+	2. Create IAM user & generate access keys
+	3. Install eksctl 
+	4. Install kubectl
+	5. Install aws cli
+	6. Configure aws access keys on the vm
+
+
+K8s svc types
+===========
+
+	1. ClusterIP:-
+
+	Ø  it will expose the app within a cluster only but you can't access app outside the cluster
+	Ø It is for prod use
+
+
+	2. NodePort:-
+
+	Ø It will expose the app on each worker node within the cluster and outside the cluster
+	Ø Every worker node has one external ip add by using it u can access the app outside of the cluster.
+	Ø It has port limitations means k8s reserved port numbers between 30000 to 32767 for node port
+	Ø You can access the app from each worker node 
+	Ø It is for only testing 
+
