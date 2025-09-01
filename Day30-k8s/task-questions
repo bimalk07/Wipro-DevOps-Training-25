@@ -1,0 +1,9 @@
+1. draw k8s architecture
+2. write pod yaml file, create pod and define each n every instruction of pod yaml
+3. prepare all commands of pod in k8s
+4. write replicaset yaml file, create rs and define each n every instruction of rs yaml
+5. prepare all commands of rs in k8s
+6. write deployment yaml , create it and define each n every instruction of deployment yaml
+7. prepare all commands of deployment in k8s
+8. write service yaml file for all 4 types and define each n every instruction of svc yaml
+9. prepare all commands of svc in k8s
