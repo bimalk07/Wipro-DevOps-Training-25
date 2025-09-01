@@ -31,3 +31,75 @@ K8s svc types
 	Ø You can access the app from each worker node 
 	Ø It is for only testing 
 
+	3. Load Balancer:-
+
+	Ø It will expose the app outside the cluster 
+	Ø It will give one external ip add for accessing ur app outside the cluster
+	Ø It will not have any port limitations and u can use the port number as u want
+	Ø It will give cost not for free
+	Ø It is for whenever u want to access the app without having any domain name or host name for temporary purpose.
+	Ø The LB ip is coming from cloud provider (aws, azure,gcp etc), it means we are getting lb from the cloud provider.
+
+	4. ExternalName:-
+
+	Ø It is a specialized svc type in k8s
+	Ø Instead of routing traffic to pods inside the cluster but it maps the service to an external dns/host name (outside or inside the cluster).
+	Ø When to use is whenever you want to access the app via dns name or host name
+	Ø Flipkart.com, amazon.com, google.com
+
+
+Flipkart App
+==========
+
+	Ø It has 8 microservices' 
+	Ø Each svc will require one LB
+	Ø LB is cost
+
+LB
+==
+
+	Ø Each lb cost is 5$ > 8*5=40$ for every month.
+	Ø But client allocation budget is only 25$.
+
+Solution is ingress
+===============
+
+Key-value-pairs
+=============
+	Ø Name: murali
+	Ø Passwd: murali98847*$#
+
+Key: value
+
+Name: murali
+Passwd: murali98847
+
+Mongdb server to my app
+=====================
+
+DB_HOST: "mydatabase"
+DB_PORT: "27071"
+APP_ENV: "prod"
+
+
+Secrets in k8s
+===========
+
+	Ø For storing sensitive information or confidential env in k8s cluster
+	Ø K8s secrets can store data in base64-encoded format only
+
+Base64:- 
+=======
+
+	Ø It is nothing but how to encode and decode k8s secrets is called base64.
+	Ø Without encoding k8s secrets will not store any value.
+	Ø This is not encryption just encoding ur env vlaues
+	Ø Then only secrets can be stored safely in yaml/json.
+
+Secret types in k8s
+===============
+
+	1. Opaque:- default type , for user defined  key-value-pairs like passwds, usernames, api-keys.
+	2. Kubernetes.io/dockerconfigjson:- for storing docker registry credentials 
+	3. Kubernetes.io/tls:- for TLS certificates and keys
+Kubernetes.io/basic-auth:- for username&passwd pairs
