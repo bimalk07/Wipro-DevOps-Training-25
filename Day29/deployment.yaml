@@ -18,6 +18,10 @@ spec:
           image: muralisocial123/ipl:latest
           ports:
             - containerPort: 3000
+# load all configmaps values
           envFrom:
             - configMapRef:
                 name: ipl-configmap
+# load all secret values
+            - secretRef:
+                name: ipl-secret
