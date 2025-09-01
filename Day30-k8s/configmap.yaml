@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ipl-configmap
+data:
+  DB_HOST: "mydatabase"
+  DB_PORT: "27071"
+  APP_ENV: "prod"
+
+
+# configmaps commands
+
+ 1153  kubectl get configmaps -n murali-ns
+ 1154  ls
+ 1155  kubectl apply -f configmap.yaml
+ 1156  cat configmap.yaml
+ 1157  kubectl get configmaps
+ 1158  kubectl delete configmap ipl-configmap
+ 1159  kubectl get configmaps
+ 1160  vi configmap.yaml
+ 1161  ls
+ 1162  kubectl apply -f configmap.yaml
+ 1163  kubectl get configmaps -n murali-ns
+ 1164  kubectl describe configmap ipl-configmap -n murali-ns
+ 1165  ls
+ 1166  vi deployment.yaml
+ 1167  ls
+ 1168  kubectl apply -f deployment.yaml
+ 1169  kubectl get all -n murali-ns
+ 1170  kubectl describe deployment ipl-deployment -n murali-ns
+ 1171  ls
+ 1172  vi configmap.yaml
+ 1173  kubectl apply -f configmap.yaml
+ 1174  ls
+ 1175  cat deployment.yaml
+
