@@ -1,0 +1,23 @@
+ 1113  kubectl edit svc ipl-svc -o yaml
+ 1114  kubectl get svc -A
+ 1115  kubectl edit svc httpbin-service -n abdullah-ns -o yaml
+ 1116  ls
+ 1117  kubectl get svc -A
+ 1118  ls
+ 1119  kubectl get ns
+ 1120  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.13.2/deploy/static/provider/cloud/deploy.yaml
+ 1121  kubectl get ns
+ 1122  kubectl get all -n ingress-nginx
+ 1123  ls
+ 1124  kubectl get ingress -A
+ 1125  ls
+ 1126  cat service.yaml
+ 1127  vi ingress.yaml
+ 1128  ls
+ 1129  cat service.yaml
+ 1130  cat ingress.yaml
+ 1131  kubectl get all -n murali-ns
+ 1132  kubectl get all -n ingress-nginx
+ 1133  ls
+ 1134  kubectl apply -f ingress.yaml
+ 1135  kubectl get ingress -n murali-ns
