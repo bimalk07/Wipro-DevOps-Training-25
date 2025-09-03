@@ -1,0 +1,34 @@
+Networking in k8s
+
+03 September 2025
+14:12
+
+Pod to pod communication 
+======================
+
+	Ø Each pod gets one dynamic ip add
+	Ø CNI plugin (container network intef):- flanner, calico, cilium)
+	Ø Pods ip's are ephemeral (temporary, short-lived)
+
+K8s network model
+================
+
+	Ø Flat network:- every pod can reach other pod in the cluster
+	Ø All pods can communicate across nodes directly through cni plugin.
+
+Ways pods communicate 
+====================
+
+	1. Direct IP-to-IP:- 
+  ===============
+
+	Ø Pod A > pod B using pods ip add they can communicate 
+
+	2. Using service 
+  ==============
+
+	Ø Svc enables network access to the pods
+	Ø Svc exposes the app
+	Ø Svc gets one static virtual ip add is called clusterip or dns name
+	Ø API server + controller manager provides ip add to svc in cluster
+From svc cidr api-server and controller manager assigns ip add to the svc.

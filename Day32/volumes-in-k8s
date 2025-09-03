@@ -1,0 +1,54 @@
+Volumes in k8s
+
+02 September 2025
+16:36
+
+Why volumes
+===========
+
+	Ø To persisting app data
+	Ø To back up the data
+	Ø To access the data
+	Ø To sharing the data
+
+What is volumes
+=============
+
+	Ø A volume in k8s is a storage unit that is attached to a pod
+	Ø Containers are stateless :- once restarted they lose data
+	Ø A volume is mounted inside a pod and can be accessed by containers
+	Ø Think of it’s a hard drive attached to ur container
+
+
+Types of volumes in k8s
+===================
+
+	1. emptyDir:-  temporary storage that lasts as long as pod runs, for temporary or testing.
+	2. hostPath:- it will use nodes filesystem
+	3. confiMaps & Secrets:- store configuration and secrets 
+	4. Pv(persistent volume) & pvc(persistent volume claim):- long-term storage from cloud or on-prem.
+	5. CSI driver:- cloud provider storage (aws-ebs, GCP-PD, Azure-Disk)
+
+Pv :- it is a storage like disk :- 20GB, cluster admin, pv is actual storage resource in k8s like diks, nfs etc
+
+PVC:- it will request storage from pv, a request for the storage by an app
+
+	Ø Pv ,pvc they are just k8s objects 
+	Ø They don’t contain the logic to create or manage storage
+	Ø CSI:- container storage interface:- it is a plugin that actually knows how to provision, attache, delete storage  
+	Ø Without csi driver k8s cant manage or create pv's 
+	Ø If u create pv manually don’t need  a csi driver becz you are going to provising manually 
+	Ø By urself attach or pointing to exisitng storages
+
+Sc is medium of communication ?:-  it will tell to k8s which csi driver to use to provision storage
+
+
+Storage class:- 
+============
+
+	Ø A storage class is like a blueprint for dyanamic storage in k8s
+	Ø It will define how pv's should be created when a pvc asks  for storage 
+	Ø Instead of creating pv manually , the sc tells k8s to talk to the underling cloud or storage provider and provision the storage automatically 
+
+	Ø Without sc you need to create pv manually 
+If ur app needs storage , you must check whether if pv is available
