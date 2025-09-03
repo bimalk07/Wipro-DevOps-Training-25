@@ -1,0 +1,90 @@
+    5  aws eks describe-nodegroup   --cluster-name cluster1   --nodegroup-name ng-1bfbfb83   --region us-east-1   --query "nodegroup.nodeRole" --output text
+    6  aws iam attach-role-policy   --role-name eksctl-cluster1-nodegroup-ng-1bfbf-NodeInstanceRole-7zjea9e8c5T5   --policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy
+    7  ls
+    8  cd murali/
+    9  ls
+   10  cd Retail-App_kubernetes/
+   11  ls
+   12  aws eks describe-addon --cluster-name murali-k8s-2 --addon-name aws-ebs-csi-driver --region us-west-1
+   13  aws eks describe-addon --cluster-name cluster1 --addon-name aws-ebs-csi-driver --region us-east-1
+   14  ls
+   15  vi sc.yaml
+   16  kubectl get sc
+   17  vi sc.yaml
+   18  ls
+   19  kubectl apply -f sc.yaml
+   20  kubectl get sc
+   21  ls
+   22  kubectl get sc
+   23  ls
+   24  vi pvc.yaml
+   25  ls
+   26  kubectl get pvc -n murali-ns
+   27  ls
+   28  kubectl apply -f mongodb-deployment.yml
+   29  kubectl apply -f mongodb-service.yml
+   30  kubectl apply -f userprofile-deployment.yml
+   31  kubectl apply -f usernode-js-service.yml
+   32  ls
+   33  kubectl get all -n murali-ns
+   34  kubectl exec -it mongodb-5cb5859fdd-7mhr2 -n murali-ns -- mongosh
+   35  ls
+   36  kubectl delete pods --all -n murali-ns
+   37  kubectl get all -n murali-ns
+   38  kubectl exec -it mongodb-5cb5859fdd-hnfbt -n murali-ns  -- mongosh
+   39  ls
+   40  vi mongodb-deployment.yml
+   41  ls
+   42  kubectl apply -f pvc.yaml
+   43  > pvc.yaml
+   44  vi pvc.yaml
+   45  ls
+   46  kubectl apply -f pvc.yaml
+   47  kubectl get pvc
+   48  kubectl get pvc -n murali-ns
+   49  kubectl describe pvc retail-pvc -n murali-ns
+   50  ls
+   51  kubectl apply -f mongodb-deployment.yml
+   52  vi mongodb-deployment.yml
+   53  kubectl apply -f mongodb-deployment.yml
+   54  kubectl get all -n murali-ns
+   55  kubectl delete pods --all -n murali-ns
+   56  kubectl get all -n murali-ns
+   57  kubectl delete pod mongodb-7c79ddb958-fsrrr -n murali-ns
+   58  kubectl get all -n murali-ns
+   59  kubectl describe pod mongodb-5cb5859fdd-msvkx -n murali-ns
+   60  kubectl get all -n murali-ns
+   61  kubectl delete rs --all -n murali-ns
+   62  kubectl get all -n murali-ns
+   63  kubectl describe pod mongodb-7c79ddb958-7xg8c -n murali-ns
+   64  ls
+   65  kubectl get all -n murali-ns
+   66  kubectl get pvc
+   67  kubectl get pvc -n murali-ns
+   68  kubectl get sc
+   69  kubectl describe pvc retail-pvc -n murali-ns
+   70  kubectl get sc
+   71  vi sc.yaml
+   72  ls
+   73  kubectl apply -f sc.yaml
+   74  kubectl delete sc retail-sc -n murali-ns
+   75  ls
+   76  kubectl get sc
+   77  kubectl apply -f sc.yaml
+   78  kubectl get sc
+   79  kubectl get pvc -n murali-ns
+   80  kubectl get all -n murali-ns
+   81  kubectl exec -it mongodb-7c79ddb958-7xg8c -n murali-ns -- mongosh
+   82  ls
+   83  kubectl delete pods --all -n murali-ns
+   84  kubectl get all -n murali-ns
+   85  kubectl exec -it mongodb-7c79ddb958-slbxx -n murali-ns -- mongosh
+   86  ls
+   87  kubectl get pods -n kube-system | grep ebs
+   88  aws eks describe-nodegroup   --cluster-name cluster1   --nodegroup-name ng-1bfbfb83   --region us-east-1   --query "nodegroup.nodeRole" --output text
+   89  aws eks describe-addon --cluster-name cluster1 --addon-name aws-ebs-csi-driver --region us-east-1
+   90  ls
+   91  cat mongodb-deployment.yml
+   92  ls
+   93  cat sc
+   94  cat sc.yaml
