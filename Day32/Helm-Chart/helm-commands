@@ -1,0 +1,94 @@
+  123  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+  124  ls
+  125  chmod 700 get_helm.sh
+  126  ls
+  127  ./get_helm.sh
+  128  helm version
+  129  helm list
+  130  helm create ipl-chart
+  131  ls
+  132  tree ipl-chart/
+  133  apt install tree -y
+  134  tree ipl-chart/
+  135  ls
+  136  cd ipl-chart/
+  137  ls
+  138  vi Chart.yaml
+  139  ls
+  140  cd charts/
+  141  ls
+  142  cd ..
+  143  ls
+  144  cd templates/
+  145  ls
+  146  vi deployment.yaml
+  147  ls
+  148  vi service
+  149  ls
+  150  rm service
+  151  vi service.yaml
+  152  ls
+  153  cd ..
+  154  ls
+  155  vi values.yaml
+  156  ls
+  157  > values.yaml
+  158  cat values.yaml
+  159  ls
+  160  cd templates/
+  161  ls
+  162  rm -rf *
+  163  ls
+  164  vi deployment.yaml
+  165  ls
+  166  cat deployment.yaml
+  167  ls
+  168  cd ..
+  169  ls
+  170  vi values.yaml
+  171  ls
+  172  cat values.yaml
+  173  cd ..
+  174  ls
+  175  helm install ipl-release --degub --dry-run ipl-chart
+  176  helm install ipl-release --debug --dry-run ipl-chart
+  177  helm install ipl-release ipl-chart/
+  178  kubectl get all -n murali-ns
+  179  ls
+  180  kubectl get all -n murali-ns
+  181  ls
+  182  cd ipl-chart/
+  183  ls
+  184  vi values.yaml
+  185  ls
+  186  cd ..
+  187  ls
+  188  helm list
+  189  helm upgrade ipl-release ipl-chart
+  190  kubectl get all -n murali-ns
+  191  ls
+  192  cd ipl-chart/
+  193  ls
+  194  vi values.yaml
+  195  ls
+  196  cd ..
+  197  helm upgrade ipl-release ipl-chart
+  198  kubectl get all -n murali-ns
+  199  ls
+  200  cd ipl-chart/
+  201  ls
+  202  > values.yaml
+  203  vi values.yaml
+  204  ls
+  205  cat values.yaml
+  206  cd templates/
+  207  ls
+  208  vi service.yaml
+  209  ls
+  210  cd ..
+  211  ls
+  212  cd ..
+  213  ls
+  214  helm install ipl-release --debug --dry-run ipl-chart/
+  215  helm upgrade ipl-release ipl-chart/
+  216  kubectl get all -n murali-ns
