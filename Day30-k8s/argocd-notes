@@ -1,0 +1,60 @@
+Argocd
+
+06 September 2025
+14:13
+
+Wt is Argocd
+==========
+
+	Ø It is a declarative , gitops-based continuous delivery tool for k8s
+	Ø It will synchronize the desired state(stored  in git) with actual state (in k8s)
+	Ø In short:- git is the source of the truth
+	Ø Argocd ensures the cluster matches it
+
+
+Why Argocd
+==========
+
+	Ø Traditional cd tools push deployments manually or via pipeline 
+	Ø Argocd automates this by pulling desired manifests from git
+
+Benefits
+=======
+
+	Ø Gitops model:- single source of the truth
+	Ø Declarative :- infra  > app as code
+	Ø Visibility:- web ui & cli to see real time app health
+	Ø Mutli-cluster support:- manage multiple clusters from one control plane
+	Ø Rollbacks:- just revert git commit
+
+Argocd Architecture 
+=================
+
+	1. API server:- it will handle cli/ui requests, exposes REST
+	2. Repository server:- it will connect to git/helm repo and it will pull manifests files
+	3. Application controller:- it will reconcile desires state (git) vs live state (k8s cluster)
+	4. Redis:- caching for performance 
+	5. Web ui:- visualization of app state
+
+
+Flow
+====
+
+Dev >  push code/manifest  > git repo  > Argocd > k8s cluster (sync)
+
+Core concepts 
+============
+
+	1. Application:- a CRD (custom resource definition) representing what to deploy and where
+	2. Project:- logical grouping of applications 
+	3. Sync:- it will bring live cluster state in line with git
+	4. Hooks:- presync, sync, postsync hooks for automation 
+	5. Sync status:- synced and outofsync
+
+
+Deployment strategies 
+===================
+
+	1. Manual sync:- admin trigger sync manually 
+	2. Auto sync:- argocd automatically applies changes from git
+Self heal:- if someone changes in the clusters argocd reverts it to match git 
